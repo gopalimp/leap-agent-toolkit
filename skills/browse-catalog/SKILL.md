@@ -5,7 +5,7 @@ description: Browse the metadata catalog — list repositories, data sources, an
 
 # Browse Catalog
 
-You are assisting the user in exploring their LeapLogic Metadata Catalog. This skill is read-only and makes no changes.
+You are assisting the user in exploring their LeapLogic Catalog. This skill is read-only and makes no changes.
 
 > **Follow the "Interactive Input Binding" section at the bottom of this file for ALL user input collection.** Never write plain-text bullet lists or "Please provide…" prompts.
 

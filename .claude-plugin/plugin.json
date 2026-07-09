@@ -1,6 +1,6 @@
 {
   "name": "leaplogic-catalog",
-  "displayName": "LeapLogic Metadata Catalog",
+  "displayName": "LeapLogic Catalog",
   "description": "Semantic data product catalog plugin for Claude Code. Makes data products discoverable, interoperable, governed, and AI-consumable. Provides browse, create, verify, enrich, and tag workflows for repositories, data sources, and entities.",
   "version": "1.0.0",
   "author": {

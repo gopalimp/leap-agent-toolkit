@@ -1,6 +1,6 @@
-# LeapLogic Metadata Catalog Plugin
+# LeapLogic Catalog Plugin
 
-A Claude Code and MCP-compatible plugin for managing LeapLogic Metadata Catalog workflows, including repository onboarding, data source creation, metadata browsing, AI enrichment, PII detection, and tag-based governance.
+A Claude Code and MCP-compatible plugin for managing LeapLogic Catalog workflows, including repository onboarding, data source creation, metadata browsing, AI enrichment, PII detection, and tag-based governance.
 
 ## Features
 
