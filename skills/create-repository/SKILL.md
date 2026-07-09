@@ -1,11 +1,11 @@
 ---
 name: create-repository
-description: Create a new repository in the LeapLogic Metadata Catalog. Guides through type selection, field discovery, connection verification, and repository creation.
+description: Create a new repository in the LeapLogic Catalog. Guides through type selection, field discovery, connection verification, and repository creation.
 ---
 
 # Create Repository
 
-You are assisting the user in creating a new repository in the LeapLogic Metadata Catalog.
+You are assisting the user in creating a new repository in the LeapLogic Catalog.
 
 > **Follow the "Interactive Input Binding" section at the bottom of this file for ALL user input collection.** Never write plain-text bullet lists or "Please provide…" prompts.
 

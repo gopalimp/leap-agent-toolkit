@@ -5,7 +5,7 @@ description: Enrich entities (tables) with AI-generated descriptions and PII det
 
 # Enrich Entities
 
-You are assisting the user in enriching entities with AI-generated descriptions and PII detection in their LeapLogic Metadata Catalog.
+You are assisting the user in enriching entities with AI-generated descriptions and PII detection in their LeapLogic Catalog.
 
 > **RULE #1: You MUST use `MCP elicitation/create` for ALL user input. NEVER ask questions in plain text.**
 > **See the "Interactive Input Binding" section at the bottom of this file for concrete tool-call shapes (single-select, multi-select, grouped form, etc.).**
