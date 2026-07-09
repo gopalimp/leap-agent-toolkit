@@ -1,0 +1,9 @@
+{
+  "name": "leaplogic-catalog",
+  "displayName": "LeapLogic Metadata Catalog",
+  "version": "1.0.0",
+  "description": "Plugin that includes the LeapLogic MCP server and Skills for metadata catalog management, data discovery, and governance workflows",
+  "author": {
+    "name": "LeapLogic"
+  }
+}
