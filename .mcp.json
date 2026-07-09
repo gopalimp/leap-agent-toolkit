@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "leaplogic-metadata": {
+      "type": "http",
+      "url": "https://test.leaplogic.io/mcp",
+      "_meta": {
+        "ideToolIconPath": "./LeapLogic Icon (Full-color).svg",
+        "ideToolIconRendersAsTemplate": true
+      }
+    }
+  }
+}

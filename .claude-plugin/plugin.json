@@ -1,0 +1,15 @@
+{
+  "name": "leaplogic-catalog",
+  "displayName": "LeapLogic Metadata Catalog",
+  "description": "Semantic data product catalog plugin for Claude Code. Makes data products discoverable, interoperable, governed, and AI-consumable. Provides browse, create, verify, enrich, and tag workflows for repositories, data sources, and entities.",
+  "version": "1.0.0",
+  "author": {
+    "name": "LeapLogic",
+    "url": "https://github.com/Impetus/leap-agent-toolkit",
+    "email": "info@leaplogic.io"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Impetus/leap-agent-toolkit",
+  "repository": "https://github.com/Impetus/leap-agent-toolkit",
+  "keywords": ["metadata", "catalog", "leaplogic", "data-product", "semantic-core", "data-governance", "data-discovery", "lineage", "data-quality", "semantic-search", "glossary", "mcp"]
+}

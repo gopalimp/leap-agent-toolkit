@@ -1,0 +1,102 @@
+name: Validate Plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate plugin.json schema
+        run: |
+          echo "Validating .claude-plugin/plugin.json..."
+          python3 -c "
+          import json, sys
+          with open('.claude-plugin/plugin.json') as f:
+              data = json.load(f)
+          required = ['name', 'description', 'version']
+          missing = [k for k in required if k not in data]
+          if missing:
+              print(f'ERROR: Missing required fields: {missing}')
+              sys.exit(1)
+          print('plugin.json is valid')
+          "
+
+      - name: Validate server.json schema
+        run: |
+          echo "Validating server.json..."
+          python3 -c "
+          import json, sys
+          with open('server.json') as f:
+              data = json.load(f)
+          required = ['name', 'title', 'description']
+          missing = [k for k in required if k not in data]
+          if missing:
+              print(f'ERROR: Missing required fields: {missing}')
+              sys.exit(1)
+          if '\$schema' not in data:
+              print('WARNING: No \$schema reference')
+          print('server.json is valid')
+          "
+
+      - name: Validate .mcp.json
+        run: |
+          echo "Validating .mcp.json..."
+          python3 -c "
+          import json, sys
+          with open('.mcp.json') as f:
+              data = json.load(f)
+          if 'mcpServers' not in data:
+              print('ERROR: Missing mcpServers key')
+              sys.exit(1)
+          for name, config in data['mcpServers'].items():
+              if 'url' not in config:
+                  print(f'ERROR: Server {name} missing url')
+                  sys.exit(1)
+          print('.mcp.json is valid')
+          "
+
+      - name: Check skill structure
+        run: |
+          echo "Checking skills..."
+          for dir in skills/*/; do
+            if [ -d "$dir" ] && [ "$(basename $dir)" != "shared" ]; then
+              if [ ! -f "$dir/SKILL.md" ]; then
+                echo "ERROR: $dir missing SKILL.md"
+                exit 1
+              fi
+            fi
+          done
+          echo "All skills have SKILL.md"
+
+      - name: Check required files
+        run: |
+          files=("LICENSE" "README.md" "server.json" ".claude-plugin/plugin.json" ".mcp.json")
+          for f in "${files[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "ERROR: Missing required file: $f"
+              exit 1
+            fi
+          done
+          echo "All required files present"
+
+      - name: Verify version consistency
+        run: |
+          python3 -c "
+          import json
+          with open('.claude-plugin/plugin.json') as f:
+              claude_version = json.load(f)['version']
+          cursor_file = '.cursor-plugin/plugin.json'
+          import os
+          if os.path.exists(cursor_file):
+              with open(cursor_file) as f:
+                  cursor_version = json.load(f)['version']
+              if claude_version != cursor_version:
+                  print(f'WARNING: Version mismatch - Claude: {claude_version}, Cursor: {cursor_version}')
+          print(f'Plugin version: {claude_version}')
+          "
