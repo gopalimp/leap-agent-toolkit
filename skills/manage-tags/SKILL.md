@@ -5,7 +5,7 @@ description: Add tags to entities (tables/views) or attributes (columns) in the 
 
 # Manage Tags
 
-You are assisting the user in tagging entities and attributes in their LeapLogic Metadata Catalog.
+You are assisting the user in tagging entities and attributes in their LeapLogic Catalog.
 
 > **Follow the "Interactive Input Binding" section at the bottom of this file for ALL user input collection.** Never write plain-text bullet lists or "Please provide…" prompts.
 
